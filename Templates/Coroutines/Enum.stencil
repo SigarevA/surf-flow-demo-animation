@@ -1,0 +1,14 @@
+package ru.surfstudio.android.demo.domain.entity
+{# ONLY STRING ENUM WITH NAMES FOR ITEMS ARE SUPPORTED #}
+{% if enum.description %}/**
+ {% for line in enum.description|splitLines %}* {{ line }}
+ {% endfor %}*/
+{% endif %}enum class {{ enum.name }}(val value: String) {
+	{% for caseValue in enum.cases %}{#
+	#}{{ caseValue|uppercase }}("{{ caseValue }}"){% if not forloop.last %},{% else %};{% endif %}
+	{% endfor %}
+	companion object {
+		fun getBy(value: String?): {{ enum.name }}? = 
+			values().find { it.value == value }
+	}
+}

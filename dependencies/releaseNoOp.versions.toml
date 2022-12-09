@@ -1,0 +1,12 @@
+# modules
+[libraries.release_chucker_no_op]
+module = "com.github.chuckerteam.chucker:library-no-op"
+
+# versions
+[libraries.release_chucker_no_op.version]
+ref = "debugChuckerVersion"
+
+[bundles]
+releaseNoOp = [
+    "release_chucker_no_op"
+]

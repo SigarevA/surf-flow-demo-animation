@@ -1,0 +1,7 @@
+# plugins
+[plugins.ksp_plugin]
+id = "com.google.devtools.ksp"
+
+# versions
+[plugins.ksp_plugin.version]
+ref = "kspVersion"

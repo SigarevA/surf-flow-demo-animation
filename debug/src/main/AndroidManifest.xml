@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ru.surfstudio.android.demo.debug">
+
+    <application>
+        <activity
+            android:name=".DebugActivity"
+            android:launchMode="singleTask" />
+    </application>
+
+</manifest>

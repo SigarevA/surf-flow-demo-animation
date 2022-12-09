@@ -1,0 +1,32 @@
+# modules
+[libraries.junit]
+module = "junit:junit"
+[libraries.junitJupiter]
+module = "org.junit.jupiter:junit-jupiter-api"
+[libraries.turbine]
+module = "app.cash.turbine:turbine"
+[libraries.mockk]
+module = "io.mockk:mockk"
+[libraries.coroutinesTest]
+module = "org.jetbrains.kotlinx:kotlinx-coroutines-test"
+
+# versions
+[libraries.junit.version]
+ref = "junitVersion"
+[libraries.junitJupiter.version]
+ref = "junitJupiterVersion"
+[libraries.turbine.version]
+ref = "turbineVersion"
+[libraries.mockk.version]
+ref = "mockkVersion"
+[libraries.coroutinesTest.version]
+ref = "coroutinesVersion"
+
+[bundles]
+test = [
+    "junit",
+    "junitJupiter",
+    "turbine",
+    "mockk",
+    "coroutinesTest"
+]

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="error_color_snackbar">#EB4250</color>
+    <color name="succeed_color_snackbar">#13C14E</color>
+    <color name="splash_color_background">@android:color/white</color>
+</resources>

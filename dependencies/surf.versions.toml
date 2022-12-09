@@ -1,0 +1,34 @@
+# modules
+[libraries.surf_activity_holder]
+module = "ru.surfstudio.android:activity-holder"
+[libraries.surf_logger]
+module = "ru.surfstudio.android:logger"
+[libraries.surf_mvi_core]
+module = "ru.surfstudio.mvi:mvi-core"
+[libraries.surf_mvi_mappers]
+module = "ru.surfstudio.mvi:mvi-mappers"
+[libraries.surf_modifier]
+module = "ru.surfstudio.compose:modifier-ext"
+
+# versions
+[libraries.surf_activity_holder.version]
+ref = "surfActivityHolderVersion"
+[libraries.surf_logger.version]
+ref = "surfLoggerVersion"
+[libraries.surf_mvi_core.version]
+ref = "surfMviVersion"
+[libraries.surf_mvi_mappers.version]
+ref = "surfMviVersion"
+[libraries.surf_modifier.version]
+ref = "surfModifierVersion"
+
+[bundles]
+surfOther = [
+    "surf_activity_holder",
+    "surf_logger",
+    "surf_modifier"
+]
+surfMvi = [
+    "surf_mvi_core",
+    "surf_mvi_mappers"
+]

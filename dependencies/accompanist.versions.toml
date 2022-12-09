@@ -1,0 +1,12 @@
+# modules
+[libraries.accompanist_swiperefresh]
+module = "com.google.accompanist:accompanist-swiperefresh"
+
+# versions
+[libraries.accompanist_swiperefresh.version]
+ref = "accompanistVersion"
+
+[bundles]
+accompanist = [
+    "accompanist_swiperefresh"
+]

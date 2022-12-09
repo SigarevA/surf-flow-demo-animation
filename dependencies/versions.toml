@@ -1,0 +1,68 @@
+[versions]
+# Android
+compileSdk = "32"
+targetSdk = "32"
+minSdk = "23"
+
+# Jetpack Compose
+# https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+composeVersion = "1.2.0-beta03"
+activityComposeVersion = "1.4.0"
+composeDestinationsVersion = "1.5.9-beta"
+constraintLayoutVersion = "1.0.1"
+pagingComposeVersion = "1.0.0-alpha15"
+accompanistVersion = "0.24.10-beta"
+
+# Firebase
+firebaseBomVersion = "30.1.0"
+
+# Surf
+surfActivityHolderVersion = "0.7.0-228"
+surfLoggerVersion = "0.6.0-228"
+surfMviVersion = "0.0.10"
+surfModifierVersion = "0.0.15"
+
+# Hilt
+hiltCoreVersion = "2.42"
+hiltNavigationVersion = "1.0.0"
+
+# Network
+retrofitVersion = "2.9.0"
+kotlinxSerializationVersion = "1.3.3"
+serializationConverterVersion = "0.8.0"
+loggingInterceptorVersion = "4.9.3"
+
+# Room
+roomVersion = "2.4.2"
+androidDatabaseSqlcipherVersion = "4.5.1"
+roomPagingVersion = "2.4.2"
+
+# Core
+materialVersion = "1.6.1"
+lifecycleVersion = "2.4.1"
+datastoreVersion = "1.0.0"
+startupVersion = "1.1.1"
+anrWatchDogVersion = "1.4.0"
+timberVersion = "5.0.1"
+
+# AndroidTest
+junitExtVersion = "1.1.3"
+espressoVersion = "3.4.0"
+
+# Unit Test
+junitVersion = "4.13.2"
+junitJupiterVersion = "5.8.2"
+turbineVersion = "0.8.0"
+mockkVersion = "1.12.4"
+coroutinesVersion = "1.6.2"
+
+# Plugins
+kspVersion = "1.6.21-1.0.5"
+
+# Debug
+# https://github.com/alorma/Compose-Debug-Drawer
+debugDrawerVersion = "0.23.0"
+# https://github.com/ChuckerTeam/chucker
+debugChuckerVersion = "3.5.2"
+# https://github.com/JakeWharton/ProcessPhoenix
+debugProcessPhoenixVersion = "2.1.2"

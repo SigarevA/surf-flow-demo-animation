@@ -1,0 +1,27 @@
+# modules
+[libraries.debug_drawer_base]
+module = "com.github.alorma:drawer-base"
+[libraries.debug_drawer_modules]
+module = "com.github.alorma:drawer-modules"
+[libraries.debug_drawer_ui_modules]
+module = "com.github.alorma:drawer-ui-modules"
+[libraries.debug_process_phoenix]
+module = "com.jakewharton:process-phoenix"
+
+# versions
+[libraries.debug_drawer_base.version]
+ref = "debugDrawerVersion"
+[libraries.debug_drawer_modules.version]
+ref = "debugDrawerVersion"
+[libraries.debug_drawer_ui_modules.version]
+ref = "debugDrawerVersion"
+[libraries.debug_process_phoenix.version]
+ref = "debugProcessPhoenixVersion"
+
+[bundles]
+debug = [
+    "debug_drawer_base",
+    "debug_drawer_modules",
+    "debug_drawer_ui_modules",
+    "debug_process_phoenix"
+]

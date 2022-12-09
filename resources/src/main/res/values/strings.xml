@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Surf Mvi Demo</string>
+
+    <!-- Common errors -->
+    <string name="default_server_error_message">Something went wrong</string>
+    <string name="forbidden_error_message">Access forbidden</string>
+    <string name="no_internet_error_message">No internet connection</string>
+
+    <!-- Tabs -->
+    <string name="bottom_bar_feed">Feed</string>
+    <string name="bottom_bar_catalog">Catalog</string>
+    <string name="bottom_bar_basket">Basket</string>
+    <string name="bottom_bar_shops">Shops</string>
+    <string name="bottom_bar_profile">Profile</string>
+</resources>

@@ -1,0 +1,22 @@
+# modules
+[libraries.junitExt]
+module = "androidx.test.ext:junit"
+[libraries.espresso]
+module = "androidx.test.espresso:espresso-core"
+[libraries.junitCompose]
+module = "androidx.compose.ui:ui-test-junit4"
+
+# versions
+[libraries.junitExt.version]
+ref = "junitExtVersion"
+[libraries.espresso.version]
+ref = "espressoVersion"
+[libraries.junitCompose.version]
+ref = "composeVersion"
+
+[bundles]
+androidTest = [
+    "junitExt",
+    "espresso",
+    "junitCompose"
+]

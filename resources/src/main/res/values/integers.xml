@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="window_animation_duration">300</integer>
+    <integer name="window_fast_animation_duration">200</integer>
+    <integer name="alerter_animation_duration">500</integer>
+    <integer name="update_snack_bar_duration">5000</integer>
+</resources>

@@ -1,0 +1,37 @@
+# modules
+[libraries.material]
+module = "com.google.android.material:material"
+[libraries.lifecycle]
+module = "androidx.lifecycle:lifecycle-runtime-ktx"
+[libraries.datastore-preferences]
+module = "androidx.datastore:datastore-preferences"
+[libraries.startup_runtime]
+module = "androidx.startup:startup-runtime"
+[libraries.anr]
+module = "com.github.anrwatchdog:anrwatchdog"
+[libraries.timber]
+module = "com.jakewharton.timber:timber"
+
+# versions
+[libraries.material.version]
+ref = "materialVersion"
+[libraries.lifecycle.version]
+ref = "lifecycleVersion"
+[libraries.datastore-preferences.version]
+ref = "datastoreVersion"
+[libraries.startup_runtime.version]
+ref = "startupVersion"
+[libraries.anr.version]
+ref = "anrWatchDogVersion"
+[libraries.timber.version]
+ref = "timberVersion"
+
+[bundles]
+core = [
+    "material",
+    "lifecycle",
+    "datastore-preferences",
+    "startup_runtime",
+    "anr",
+    "timber"
+]

@@ -1,0 +1,13 @@
+# modules
+[libraries]
+bom_firebase = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBomVersion"}
+analytics_firebase = { module = "com.google.firebase:firebase-analytics" }
+crashlytics_firebase = { module = "com.google.firebase:firebase-crashlytics" }
+messaging_firebase = { module = "com.google.firebase:firebase-messaging" }
+
+[bundles]
+firebase = [
+    "analytics_firebase",
+    "crashlytics_firebase",
+    "messaging_firebase",
+]

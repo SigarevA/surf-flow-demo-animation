@@ -1,0 +1,66 @@
+useNewNullableDeterminationStrategy: true
+
+prefixesToCutDownInServiceNames:
+  - /api/v1.1
+  - /api/1.1
+
+analytcsConfig:
+  logstashEnpointURI: http://logs.ps.surfstudio.ru
+  payload:
+    project: TEST
+
+templates:
+  # Generate Retrofit interface for each service endpoint
+  - type: service
+    nameSuffix: Api
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Api.stencil
+    destinationPath: ./network/src/main/kotlin/ru/surfstudio/android/demo/network/generated/api
+
+  # Generate kotlin enum
+  - type: enum
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Enum.stencil
+    destinationPath: ./domain/src/main/kotlin/ru/surfstudio/android/demo/domain/entity
+
+  # Generate service mapping model
+  - type: model
+    nameSuffix: Entry
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Entry.stencil
+    destinationPath: ./network/src/main/kotlin/ru/surfstudio/android/demo/network/generated/entry
+
+  # Generate domain mapping model
+  - type: model
+    nameSuffix: Entity
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Entity.stencil
+    destinationPath: ./domain/src/main/kotlin/ru/surfstudio/android/demo/domain/entity
+
+  # Generate module which provides Retrofit interface using Dagger DI
+  - type: service
+    nameSuffix: Module
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Module.stencil
+    destinationPath: ./network/src/main/kotlin/ru/surfstudio/android/demo/network/generated/di
+
+  # Generate repository which calls api methods
+  - type: service
+    nameSuffix: Repository
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Repository.stencil
+    destinationPath: ./network/src/main/kotlin/ru/surfstudio/android/demo/network/generated/repo
+
+  # Generate interactor which calls repository's methods
+  - type: service
+    nameSuffix: Interactor
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Interactor.stencil
+    destinationPath: ./network/src/main/kotlin/ru/surfstudio/android/demo/network/generated/interactor
+
+  # Generate kotlin object with urls for a given service
+  - type: service
+    nameSuffix: Urls
+    fileExtension: kt
+    templatePath: ./Templates/Coroutines/Urls.stencil
+    destinationPath: ./network/src/main/kotlin/ru/surfstudio/android/demo/network/generated/urls

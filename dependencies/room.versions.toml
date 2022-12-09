@@ -1,0 +1,34 @@
+# modules
+[libraries.room_core]
+module = "androidx.room:room-runtime"
+[libraries.room_ktx]
+module = "androidx.room:room-ktx"
+[libraries.room_compiler]
+module = "androidx.room:room-compiler"
+[libraries.room_paging]
+module = "androidx.room:room-paging"
+[libraries.room_sqlcipher]
+module = "net.zetetic:android-database-sqlcipher"
+
+# versions
+[libraries.room_core.version]
+ref = "roomVersion"
+[libraries.room_ktx.version]
+ref = "roomVersion"
+[libraries.room_compiler.version]
+ref = "roomVersion"
+[libraries.room_paging.version]
+ref = "roomPagingVersion"
+[libraries.room_sqlcipher.version]
+ref = "androidDatabaseSqlcipherVersion"
+
+[bundles]
+room = [
+    "room_core",
+    "room_ktx",
+    "room_sqlcipher",
+    "room_paging"
+]
+roomKapt = [
+    "room_compiler"
+]
