@@ -1,6 +1,6 @@
 package ru.surfstudio.android.demo.components.compose.overload.navigation
 
-import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.Spring.StiffnessMediumLow
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Canvas
@@ -28,10 +28,10 @@ fun AnimatedBottomNavigation(
     countTab: Int,
     modifier: Modifier = Modifier,
     backgroundColor: Color = MaterialTheme.colors.primarySurface,
-    heightHill : Dp = DefaultHeightHill.dp,
+    heightHill: Dp = DefaultHeightHill.dp,
     contentColor: Color = contentColorFor(backgroundColor),
     elevation: Dp = BottomNavigationDefaults.Elevation,
-    content: @Composable RowScope.() -> Unit
+    content: @Composable RowScope.() -> Unit,
 ) {
     check(selectedIndex < countTab) {
         "selectedIndex must be less countTab"
@@ -50,7 +50,10 @@ fun AnimatedBottomNavigation(
 
         val animOffset by animateDpAsState(
             targetValue = widthHill.times(selectedIndex),
-            animationSpec = spring(Spring.DampingRatioMediumBouncy)
+            animationSpec = spring(
+                0.6f,
+                stiffness = StiffnessMediumLow
+            )
         )
 
         Canvas(
@@ -84,9 +87,9 @@ fun AnimatedBottomNavigation(
 }
 
 private fun DrawScope.drawHill(
-    fullWidth : Float,
-    backgroundColor : Color,
-    heightHill: Float
+    fullWidth: Float,
+    backgroundColor: Color,
+    heightHill: Float,
 ) {
     val width = 2 * (76 / 41) * heightHill
     val centerX = fullWidth / 2f
