@@ -41,22 +41,22 @@ class MainActivity : ComponentActivity() {
                     onClick = { /* TODO("Don't implementation") */}
                 )
 
-                AnimatedBottomNavigation(
-                    selectedTab.ordinal,
-                    Tabs.values().size,
-                    backgroundColor = Color(0xFFFA6364),
-                    modifier = Modifier.align(Alignment.BottomCenter)
-                ) {
-                    Tabs.values().forEach { tab ->
-                        AnimatedNavigationBarItem(
-                            selected = selectedTab == tab,
-                            onClick = { selectedTab = tab },
-                            iconResId = tab.iconResId,
-                            selectedContentColor = Color.White,
-                            unselectedContentColor = Color(0xFFFFB2B2),
-                        )
-                    }
-                }
+//                AnimatedBottomNavigation(
+//                    selectedTab.ordinal,
+//                    Tabs.values().size,
+//                    backgroundColor = Color(0xFFFA6364),
+//                    modifier = Modifier.align(Alignment.BottomCenter)
+//                ) {
+//                    Tabs.values().forEach { tab ->
+//                        AnimatedNavigationBarItem(
+//                            selected = selectedTab == tab,
+//                            onClick = { selectedTab = tab },
+//                            iconResId = tab.iconResId,
+//                            selectedContentColor = Color.White,
+//                            unselectedContentColor = Color(0xFFFFB2B2),
+//                        )
+//                    }
+//                }
 
 //                MainScreen { message, succeed ->
 //                    if (succeed) {
@@ -78,7 +78,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PreviewActivity() {
     var selectedTab by remember { mutableStateOf(Tabs.Smile) }
-    Box {
+    Box(Modifier.fillMaxSize()) {
+        SubscribeButton(
+            text = "SUBSCRIBE",
+            onClick = { /* TODO("Don't implementation") */}
+        )
+
         AnimatedBottomNavigation(
             selectedTab.ordinal,
             Tabs.values().size,
