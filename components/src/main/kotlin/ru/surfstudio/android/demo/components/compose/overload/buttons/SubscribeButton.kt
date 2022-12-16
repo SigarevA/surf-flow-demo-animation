@@ -5,7 +5,10 @@ import android.util.Log
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -34,7 +37,6 @@ fun SubscribeButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    dpSize: DpSize = DpSize(Dp(160f), Dp(44f)),
     borderWidth: Float = 4f,
     colorBackground: Color = Color.Red,
     colorContent: Color = Color.White,
@@ -180,43 +182,6 @@ fun SubscribeButton(
     Box(
         modifier = modifier
     ) {
-//        AnimatedVisibility(
-//            visible = isActive,
-//            modifier = Modifier
-//                .padding(top = 90.dp),
-//            enter = fadeIn(
-//                animationSpec = tween(durationMillis = 250)
-//            ),
-//            exit = fadeOut(
-//                animationSpec = tween(durationMillis = 250)
-//            )
-//        ) {
-//            TextButton(
-//                onClick = {
-//                    onClick()
-//                    isActive = false
-//                    transitionSubscribeAnimation = true
-//                },
-//                contentPadding = PaddingValues(
-//                    vertical = 8.dp,
-//                    horizontal = 32.dp
-//                ),
-//                border = if (isActive) BorderStroke(
-//                    4.dp, colorBackground
-//                ) else null,
-//                shape = RoundedCornerShape(44.dp),
-//                modifier = Modifier
-//                    .size(dpSize)
-//            ) {
-//                Text(
-//                    text = text,
-//                    letterSpacing = 2.sp,
-//                    color = colorBackground
-//                )
-//            }
-//        }
-
-
         val mainContent = @Composable {
             Box(
                 modifier = Modifier.alpha(fadeActiveBtnAnimation.value)
@@ -304,32 +269,6 @@ fun SubscribeButton(
                     }
             }
         }
-
-
-//            Button(
-//                onClick = {
-//                    transitionUnSubscribeAnimationState = true
-//                    isSubscribe = false
-//                },
-//                colors = ButtonDefaults.buttonColors(
-//                    backgroundColor = colorBackground
-//                ),
-//                elevation = ButtonDefaults.elevation(
-//                    0.dp, 0.dp, 0.dp, 0.dp, 0.dp,
-//                ),
-//                shape = RoundedCornerShape(50),
-//                contentPadding = PaddingValues(),
-//                modifier = Modifier
-//                    .padding(top = 89.7.dp)
-//                    .size(dpSize)
-//            ) {
-//                CompleteSubscriptionComponent(
-//                    colorBackground = colorBackground,
-//                    colorContent = colorContent,
-//                    animationState = CompleteSubscriptionAnimationState.No,
-//                    offset = Offset(0f, -1f),
-//                )
-//            }
     }
 }
 
@@ -357,11 +296,11 @@ private fun BackgroundSubscribeButton(
                 RoundRect(
                     Rect(
                         Offset(
-                            scaleBorderWidth / 2 + (widthDeference *  widthAnimation) / 2f,
+                            scaleBorderWidth / 2 + (widthDeference * widthAnimation) / 2f,
                             scaleBorderWidth / 2
                         ),
                         Size(
-                            scaleSize.width - scaleBorderWidth - ( widthDeference * widthAnimation),
+                            scaleSize.width - scaleBorderWidth - (widthDeference * widthAnimation),
                             scaleSize.height - scaleBorderWidth
                         )
                     ),
@@ -450,45 +389,23 @@ private fun ActiveSubscribeButtonComponent(
     onClick: () -> Unit,
     text: @Composable () -> Unit,
 ) {
-//    AnimatedVisibility(
-//        visible = isActive,
-//        modifier = Modifier
-//            .onPlaced {
-//                it.boundsInWindow()
-//            },
-//        enter = fadeIn(
-//            animationSpec = tween(durationMillis = 250)
-//        ),
-//        exit = fadeOut(
-//            animationSpec = tween(durationMillis = 250)
-//        ),
-//    ) {
-        TextButton(
-            onClick = {
-                onClick()
-//                isActive = false
-//                transitionSubscribeAnimation = true
-            },
-            contentPadding = PaddingValues(
-                vertical = 8.dp,
-                horizontal = 32.dp
-            ),
-            border = if (isActive) BorderStroke(
-                borderWidth, colorBackground
-            ) else null,
-            shape = RoundedCornerShape(50),
-            modifier = Modifier
-                .height(40.dp)
-//                .size(dpSize)
-        ) {
-            text()
-//            Text(
-//                text = text,
-//                letterSpacing = 2.sp,
-//                color = colorBackground
-//            )
-        }
-//    }
+    TextButton(
+        onClick = {
+            onClick()
+        },
+        contentPadding = PaddingValues(
+            vertical = 8.dp,
+            horizontal = 32.dp
+        ),
+        border = if (isActive) BorderStroke(
+            borderWidth, colorBackground
+        ) else null,
+        shape = RoundedCornerShape(50),
+        modifier = Modifier
+            .height(40.dp)
+    ) {
+        text()
+    }
 }
 
 private const val AnimationDuration = 1250
@@ -603,19 +520,19 @@ private fun CompleteSubscriptionComponent(
         }
     ) {
         if (leftStartLineLengthAnimation.value != leftLineLengthAnimation.value)
-        drawLine(
-            color = colorContent,
-            start = Offset(
-                6.dp.toPx() + leftStartLineLengthAnimation.value,
-                18.dp.toPx() + leftStartLineLengthAnimation.value,
-            ),
-            end = Offset(
-                6.dp.toPx() + leftLineLengthAnimation.value,
-                18.dp.toPx() + leftLineLengthAnimation.value,
-            ),
-            strokeWidth = 4.dp.toPx(),
-            cap = Round,
-        )
+            drawLine(
+                color = colorContent,
+                start = Offset(
+                    6.dp.toPx() + leftStartLineLengthAnimation.value,
+                    18.dp.toPx() + leftStartLineLengthAnimation.value,
+                ),
+                end = Offset(
+                    6.dp.toPx() + leftLineLengthAnimation.value,
+                    18.dp.toPx() + leftLineLengthAnimation.value,
+                ),
+                strokeWidth = 4.dp.toPx(),
+                cap = Round,
+            )
         if (rightStartLineLengthAnimation.value != rightLineLengthAnimation.value) {
             drawLine(
                 color = colorContent,
@@ -657,9 +574,5 @@ private fun rememberCompleteAnimationState(
 enum class CompleteSubscriptionAnimationState {
     No, Expand, Hidden;
 }
-
-//enum class SubscribeState {
-//    Active, Progress, Subscribed, Intermediate
-//}
 
 private const val TAG = "SubscribeButton"
