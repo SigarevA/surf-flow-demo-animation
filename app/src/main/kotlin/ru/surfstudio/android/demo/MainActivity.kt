@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,7 +36,7 @@ class MainActivity : ComponentActivity() {
             Box(modifier = Modifier.fillMaxSize()) {
 
                 SubscribeButton(
-                    text = "SUBSCRIBE",
+                    text = "SUBSCRIBE2133123123",
                     onClick = { /* TODO("Don't implementation") */}
                 )
 
@@ -80,7 +79,7 @@ fun PreviewActivity() {
     var selectedTab by remember { mutableStateOf(Tabs.Smile) }
     Box(Modifier.fillMaxSize()) {
         SubscribeButton(
-            text = "SUBSCRIBE",
+            text = "SUBSCRIBE2133123123",
             onClick = { /* TODO("Don't implementation") */}
         )
 
